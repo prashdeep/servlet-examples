@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID"
+	version="3.0"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+	<display-name>servlet-examples</display-name>
+	<servlet>
+		<servlet-name>hello</servlet-name>
+		<servlet-class>MyFirstServlet</servlet-class>
+		<init-param>
+			<param-name>username</param-name>
+			<param-value>root</param-value>
+		</init-param>
+		<init-param>
+			<param-name>password</param-name>
+			<param-value>welcome</param-value>
+		</init-param>
+		<init-param>
+			<param-name>url</param-name>
+			<param-value>jdbc:mysql://localhost/STUDENTS</param-value>
+		</init-param>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>hello</servlet-name>
+		<url-pattern>/hi</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>getdemo</servlet-name>
+		<servlet-class>DoGetServlet</servlet-class>
+		
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>getdemo</servlet-name>
+		<url-pattern>/fetch</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>postDemo</servlet-name>
+		<servlet-class>DoPostServlet</servlet-class>
+		
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>postDemo</servlet-name>
+		<url-pattern>/update</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>servletA</servlet-name>
+		<servlet-class>ServletA</servlet-class>
+		
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>servletA</servlet-name>
+		<url-pattern>/dispatch</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ServletB</servlet-name>
+		<servlet-class>ServletB</servlet-class>
+		
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>ServletB</servlet-name>
+		<url-pattern>/forward</url-pattern>
+	</servlet-mapping>
+	
+	
+	<filter>
+		<filter-name>logFilter</filter-name>
+		<filter-class>LoggingFilter</filter-class>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>logFilter</filter-name>
+		<url-pattern>/dispatch</url-pattern>
+	</filter-mapping>
+	<listener>
+		<listener-class>MyContextListerner</listener-class>
+	</listener>
+	
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>
