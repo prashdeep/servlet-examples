@@ -66,6 +66,28 @@
 		
 	</servlet>
 	
+	<servlet>
+		<servlet-name>welcome</servlet-name>
+		<servlet-class>SessionWelcomeServlet</servlet-class>
+		
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>welcome</servlet-name>
+		<url-pattern>/welcome</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>session</servlet-name>
+		<servlet-class>SessionValidateServlet</servlet-class>
+		
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>session</servlet-name>
+		<url-pattern>/session</url-pattern>
+	</servlet-mapping>
+	
 	<servlet-mapping>
 		<servlet-name>ServletB</servlet-name>
 		<url-pattern>/forward</url-pattern>

@@ -15,12 +15,17 @@ public class ServletA extends HttpServlet {
 		out.println("<h1>Came inside the ServletA class....</h1>");
 		String username = req.getParameter("username");
 		String password = req.getParameter("password");
+		
+		out.println("<h2>User name "+username+"</h2>");
+		out.println("<h2><b><u>password > "+password+"</u></b></h2>");
 
 		req.setAttribute("user", username);
 		req.setAttribute("credentials", password);
 		
-		RequestDispatcher rd = req.getRequestDispatcher("forward");
-		rd.forward(req, res);
+		res.sendRedirect("http://www.google.com");
+		
+//		RequestDispatcher rd = req.getRequestDispatcher("forward");
+//		rd.forward(req, res);
 	}
 
 }
