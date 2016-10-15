@@ -93,6 +93,15 @@
 		<url-pattern>/forward</url-pattern>
 	</servlet-mapping>
 	
+		<filter>
+		<filter-name>authFilter</filter-name>
+		<filter-class>AuthFilter</filter-class>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>authFilter</filter-name>
+		<url-pattern>/dispatch</url-pattern>
+	</filter-mapping>
 	
 	<filter>
 		<filter-name>logFilter</filter-name>
@@ -102,6 +111,19 @@
 	<filter-mapping>
 		<filter-name>logFilter</filter-name>
 		<url-pattern>/dispatch</url-pattern>
+	</filter-mapping>
+	
+	
+
+	
+	<filter>
+		<filter-name>logFilterB</filter-name>
+		<filter-class>LoggingFilter</filter-class>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>logFilterB</filter-name>
+		<url-pattern>/forward</url-pattern>
 	</filter-mapping>
 	<listener>
 		<listener-class>MyContextListerner</listener-class>

@@ -7,26 +7,26 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 
-public class LoggingFilter implements Filter{
+public class AuthFilter implements Filter{
 
 	@Override
 	public void destroy() {
-		System.out.println("Called from the logging filter");
 		
 	}
 
 	@Override
-	public void doFilter(ServletRequest arg0, ServletResponse arg1, FilterChain arg2)
+	public void doFilter(ServletRequest req, ServletResponse res, FilterChain arg2)
 			throws IOException, ServletException {
-		System.out.println("Logging the servlet calls >> ");
-		arg2.doFilter(arg0, arg1);
-		
+		System.out.println("Inside the authentication filter..");
+		if (!req.getParameter("username").equalsIgnoreCase("pradeep")){
+			throw new ServletException("UnAuthenticated user.");
+		}
+		arg2.doFilter(req, res);
 	}
 
 	@Override
 	public void init(FilterConfig arg0) throws ServletException {
-		// TODO Auto-generated method stub
-		System.out.println("Called from the logging filter's init method");
+		
 	}
 
 }

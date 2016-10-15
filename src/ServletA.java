@@ -22,10 +22,10 @@ public class ServletA extends HttpServlet {
 		req.setAttribute("user", username);
 		req.setAttribute("credentials", password);
 		
-		res.sendRedirect("http://www.google.com");
+		//res.sendRedirect("http://www.google.com");
 		
-//		RequestDispatcher rd = req.getRequestDispatcher("forward");
-//		rd.forward(req, res);
+		RequestDispatcher rd = req.getRequestDispatcher("forward");
+		rd.forward(req, res);
 	}
 
 }
