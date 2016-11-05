@@ -2,10 +2,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>My first Jsp</title>
 </head>
 <body>
-  <h2>This is my first Jsp page  .</h2>
+  <h2>This is my first Jsp page.</h2>
   <p>
     Demonstrating the page loading of Jsp page.
   </p>

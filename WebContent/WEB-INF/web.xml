@@ -93,6 +93,17 @@
 		<url-pattern>/forward</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>jstl</servlet-name>
+		<servlet-class>JSTLDemoServlet</servlet-class>
+		
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>jstl</servlet-name>
+		<url-pattern>/jstl</url-pattern>
+	</servlet-mapping>
+	
 		<filter>
 		<filter-name>authFilter</filter-name>
 		<filter-class>AuthFilter</filter-class>

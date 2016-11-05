@@ -1,4 +1,4 @@
-<%@ page import="java.sql.*" %>
+<%@ page import="java.sql.*"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -7,32 +7,28 @@
 </head>
 <body>
 
+	<%
+		Class.forName("com.mysql.jdbc.Driver");
+		System.out.println("Driver loaded...");
 
-<%
+		Connection con = DriverManager.getConnection("jdbc:mysql://localhost/STUDENTS", "root", "welcome");
+		System.out.println("Connected to the database");
 
-Class.forName("oracle.jdbc.driver.OracleDriver");
-System.out.println("Driver loaded...");
+		Statement st = con.createStatement();
 
-Connection con=DriverManager.getConnection("jdbc:oracle:thin:@charan-HP:1521:XE","system","mascot");
-System.out.println("Connected to the database");
+		/*     System.out.println("Before creating the table...");
+		st.execute("create table student(no varchar(10),name varchar(20))");
+		System.out.println("table created");
+		*/
 
-Statement st=con.createStatement();
+		//st.executeUpdate("insert into students values(40,'Sharath')");
+		//System.out.println("  row inserted");
 
-/*     System.out.println("Before creating the table...");
-st.execute("create table student(no varchar(10),name varchar(20))");
-System.out.println("table created");
-*/   
+		st.executeUpdate("update students set name='Sharath Kumar' where name='Sharath'");
+		//System.out.println("row updated");
 
-st.executeUpdate("insert into student values('42','Pavas')");
-System.out.println("  row inserted");
-
-// st.executeUpdate("update student set name='Pavas sisaudia' where name='Pavas'");
-//  System.out.println("row updated");
- 
-con.close();
-System.out.println("Connection closed...");
-
-
-%>
+		con.close();
+		System.out.println("Connection closed...");
+	%>
 </body>
 </html>

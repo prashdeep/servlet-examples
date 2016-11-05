@@ -7,7 +7,20 @@
 <title>Insert title here</title>
 </head>
 <body>
-<% out.print("Today is:"+java.util.Calendar.getInstance().getTime()); %>
+<% 
+   String username = request.getParameter("username");
+   String password = request.getParameter("password");
+
+   if (username.equalsIgnoreCase("pradeep")&& password.equalsIgnoreCase("1234")){%>
+	   Welcome: <%= username %>
+<% 
+	   session.setAttribute("username",username);
+
+   }else{
+	   response.sendRedirect("http://www.google.com");
+   }
+%>
+<span style="padding:10px; background-color:red">Today is:<%= java.util.Calendar.getInstance().getTime() %></span>
 </body>
 </html>
 

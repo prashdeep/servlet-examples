@@ -6,6 +6,8 @@
 <% 
 
 String name=(String)pageContext.getAttribute("user",PageContext.SESSION_SCOPE);
+
+session.getAttribute("user");
 out.print("Hello "+name);
 %> 
 
