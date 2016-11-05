@@ -15,13 +15,13 @@ public class AuthFilter implements Filter{
 	}
 
 	@Override
-	public void doFilter(ServletRequest req, ServletResponse res, FilterChain arg2)
+	public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain)
 			throws IOException, ServletException {
 		System.out.println("Inside the authentication filter..");
 		if (!req.getParameter("username").equalsIgnoreCase("pradeep")){
 			throw new ServletException("UnAuthenticated user.");
 		}
-		arg2.doFilter(req, res);
+		chain.doFilter(req, res);
 	}
 
 	@Override
